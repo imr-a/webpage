@@ -3,56 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picsum</title>
+    <title>Sign in - Google Accounts</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header"> 
-        <nav>
-            <h1>Picsum</h1>
-            <ul>
-                <li>Home |</li>
-                <li>Products |</li>
-                <li>About Us |</li>
-                <li>Contact Us </li>
-            </ul>
-        </nav>
-
-    </div>
-    <div class="serachbar">
-        <input placeholder="Search">
-
-    </div>
-    <div class="products">
-        <div class="box ">
-            <img src= "https://picsum.photos/200/?picsum?1 ">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi eos vitae corporis, impedit nulla id eum omnis natus! Maxime, repellendus.</p>
-        </div> 
-
-        <div class="box ">
-            <img src= "https://picsum.photos/200/?picsum?2 ">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi eos vitae corporis, impedit nulla id eum omnis natus! Maxime, repellendus.</p>
-        </div> 
-
-        <div class="box ">
-            <img src= "https://picsum.photos/200/?picsum?3 ">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi eos vitae corporis, impedit nulla id eum omnis natus! Maxime, repellendus.</p>
-        </div> 
-
-    </div>
-    <div class="about">
-        <h1 style="text-align: center;">About Us</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias culpa molestiae a veritatis nam ullam, vero facilis rerum eaque, itaque nesciunt atque tempore consectetur cum. Autem commodi dolores vitae quibusdam voluptates cupiditate porro, officiis, accusantium optio culpa omnis nostrum voluptate! Explicabo perspiciatis mollitia similique ad quaerat! Quas voluptatem, quaerat magnam reiciendis tempore nesciunt, laboriosam dolore soluta delectus quam beatae animi quod amet? Perspiciatis suscipit omnis est accusamus provident at repudiandae exercitationem, eius quisquam ducimus laboriosam aut quos, optio nesciunt. Itaque libero saepe, minus at quia dicta, ducimus, deleniti quas voluptatum repellendus asperiores sit repudiandae eius nihil doloribus. Placeat, impedit?</p>
+    <div class="container">
+        <div class="login-box">
+            <div class="google-logo">
+                <svg viewBox="0 0 75 24" width="75" height="24">
+                    <g>
+                        <path fill="#4285F4" d="M36.3425 7.70705C36.3425 6.54338 36.2584 5.62859 36.0902 4.6697H18.6562V10.3771H28.3963C28.0601 12.901 26.8136 14.3384 24.8754 15.29V19.2426H30.8023C34.0967 16.2102 36.3425 12.2576 36.3425 7.70705Z"></path>
+                        <path fill="#34A853" d="M18.6562 23.0581C23.3282 23.0581 27.2808 21.6206 30.8023 19.2426L24.8754 15.29C23.2842 16.3697 21.1943 17.0139 18.6562 17.0139C14.1497 17.0139 10.3012 13.9815 8.9078 9.79688H2.76562V13.8934C6.26719 20.8372 11.9498 23.0581 18.6562 23.0581Z"></path>
+                        <path fill="#FBBC05" d="M8.9078 9.79688C8.6156 8.71719 8.45156 7.58969 8.45156 6.42969C8.45156 5.26969 8.6156 4.14219 8.9078 3.06641V-0.964844H2.76562C1.46484 1.63125 0.75 4.63672 0.75 7.79297C0.75 10.9492 1.46484 13.9547 2.76562 16.5508L8.9078 9.79688Z"></path>
+                        <path fill="#EA4335" d="M18.6562 -0.964844C21.4779 -0.964844 23.8479 0.0429688 25.6162 1.73672L31.0188 -3.66641C27.2808 -7.19062 23.3282 -8.85625 18.6562 -8.85625C11.9498 -8.85625 6.26719 -6.63516 2.76562 -0.964844L8.9078 3.06641C10.3012 -1.11328 14.1497 -0.964844 18.6562 -0.964844Z"></path>
+                    </g>
+                </svg>
+            </div>
+            
+            <h1 class="title">Sign in</h1>
+            <p class="subtitle">to continue to Google</p>
+            
+            <form class="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" class="form-input" placeholder=" " required>
+                    <label for="email" class="form-label">Email or phone</label>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="password" class="form-input" placeholder=" " required>
+                    <label for="password" class="form-label">Enter your password</label>
+                </div>
+                
+                <div class="forgot-email">
+                    <a href="#" class="link">Forgot email?</a>
+                </div>
+                
+                <div class="help-text">
+                    <p>Not your computer? Use Guest mode to sign in privately.</p>
+                    <a href="#" class="link">Learn more</a>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary">Create account</button>
+                    <button type="submit" class="btn-primary">Next</button>
+                </div>
+            </form>
+        </div>
         
+        <div class="footer">
+            <div class="language-select">
+                <select>
+                    <option>English (United States)</option>
+                    <option>Español</option>
+                    <option>Français</option>
+                    <option>Deutsch</option>
+                </select>
+            </div>
+            <div class="footer-links">
+                <a href="#">Help</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactive behavior
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (this.value === '') {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value !== '') {
+                    this.parentElement.classList.add('has-content');
+                } else {
+                    this.parentElement.classList.remove('has-content');
+                }
+            });
+        });
         
-    </div>
-    <div class="contact">
-
-        <h4>Contact</h4>
-        <p>+91 9626466795</p>
-        <p>imranfargut@gmail.com</p>
-        <p style="margin-top: 30px; font-size: 10px;" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque excepturi eos ad consequatur dolorum impedit nulla quae aliquid architecto deserunt ab quaerat dicta, laudantium qui, tempora enim quia nisi minima obcaecati eius adipisci. Voluptates tempore sequi ex consequuntur sunt, totam, dolores nemo alias vero ipsa harum ab dicta provident exercitationem?</p>
-
-    </div>
+        // Form submission
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                alert('Login functionality would be implemented here');
+            }
+        });
+    </script>
 </body>
 </html>
