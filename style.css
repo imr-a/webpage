@@ -1,69 +1,192 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-nav{
-    background-color: black; color: white;
-    padding: 15px;
-      
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-li,h1,ul{
-    display: inline;
+body {
+  background: #f4fdf8;
+  color: #333;
+  line-height: 1.6;
 }
 
-ul{
-
-    margin-left: 60%;
-    cursor: pointer;
+/* Navigation */
+.navbar {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-li{
-    color:gray
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
-li:hover{
-    color: white;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
-input{
-
-    width: 60%;
-    padding: 15px;
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.serachbar{
-    padding: 50px; 
-    text-align: center;
+.nav-links li a:hover {
+  color: #e9c46a;
 }
 
-.box{
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    display: inline-block;
-    width: 200px;
-    
+/* Hero Section */
+.hero {
+  background-color: #d4f1f4;
+  text-align: center;
+  padding: 4rem 2rem;
 }
 
-.box:hover{
-    background-color: black;
-    color: white;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.products{
-    text-align: center;
+.cta-btn {
+  display: inline-block;
+  background: #2a9d8f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
-.about{
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-
+.cta-btn:hover {
+  background: #21867a;
 }
 
-.contact{
-    background-color: black; color: white;
-    text-align: center;
-    padding: 40px;
+/* Features */
+.features-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #ffffff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #e9f5f2;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 1rem;
+}
+
+/* Chat Section */
+.chatbot-section {
+  padding: 3rem 2rem;
+  background: #f0fdf4;
+}
+
+.chat-box {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  height: 300px;
+  padding: 1rem;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.msg {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.msg.user {
+  background: #ffe0e6;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+.msg.bot {
+  background: #d0f0c0;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  background: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: #21867a;
+}
+
+/* Info Sections */
+.info-section {
+  padding: 3rem 2rem;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+.info-section h2 {
+  margin-bottom: 1rem;
+  color: #2a9d8f;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2a9d8f;
+  color: white;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .chat-input input, .chat-input button {
+    font-size: 0.9rem;
+  }
 }

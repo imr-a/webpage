@@ -2,134 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Voice Button</title>
-  <style>
-    body {
-      overflow: hidden;
-      background: #3b0e68;
-      background: radial-gradient(circle, #3b0e68 0%, #1a084e 100%);
-    }
-
-    .mic {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-    }
-
-    .mic::before,
-    .mic::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 100%;
-      z-index: 2;
-      box-shadow: 0 0 20px 20px #1c084f;
-    }
-
-    .mic::before {
-      width: 400px;
-      height: 400px;
-      background-color: #1a084e;
-    }
-
-    .mic::after {
-      width: 250px;
-      height: 250px;
-      background-color: #2f1e5f;
-      animation: circle-size 0.8s linear infinite alternate;
-    }
-
-    .mic-icon {
-      box-sizing: border-box;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(5);
-      display: block;
-      width: 16px;
-      height: 16px;
-      border-bottom-left-radius: 120px;
-      border-bottom-right-radius: 120px;
-      border: 2px solid;
-      border-top: 0;
-      margin-top: 20px;
-      z-index: 3;
-    }
-
-    .mic-icon::before,
-    .mic-icon::after {
-      content: "";
-      display: block;
-      box-sizing: border-box;
-      position: absolute;
-    }
-
-    .mic-icon::before {
-      width: 2px;
-      height: 5px;
-      top: calc(100% + 1px);
-      left: 50%;
-      transform: translate(-50%, 0);
-      background-color: #fff;
-    }
-
-    .mic-icon::after {
-      border: 2px solid;
-      width: 8px;
-      height: 18px;
-      left: 50%;
-      top: -10px;
-      border-radius: 4px;
-      transform: translate(-50%, 0);
-    }
-
-    .mic-shadow {
-      width: 400px;
-      height: 400px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border-radius: 100%;
-      z-index: 1;
-      box-shadow:
-        10px -55px 20px 15px #823ca6,
-        24px -10px 47px 10px #aabd32,
-        -21px -25px 97px 10px #5ace23,
-        51px 5px 17px 10px #1b7d8f,
-        3px 2px 77px 10px #f3bef5;
-      animation: shadow-rotate 1.5s linear infinite;
-      transform-origin: center;
-    }
-
-    @keyframes circle-size {
-      from {
-        width: 250px;
-        height: 250px;
-      }
-      to {
-        width: 300px;
-        height: 300px;
-      }
-    }
-
-    @keyframes shadow-rotate {
-      from {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-      to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organic AI - Home</title>
+  <link rel="icon" href="download.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="mic">
-    <i class="mic-icon"></i>
-    <div class="mic-shadow"></div>
-  </div>
+  <nav class="navbar">
+    <div class="logo">🌿 Organic AI</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#chat">Chat</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home" class="hero">
+    <h1>Welcome to Organic AI</h1>
+    <p>We build AI that talks, learns, and adapts like humans.</p>
+    <a href="#chat" class="cta-btn">Start Chatting</a>
+  </header>
+
+  <section id="features" class="features-section">
+    <h2>💡 Features of Organic AI</h2>
+    <div class="features-grid">
+      <div class="card">💬 Chat Like a Human</div>
+      <div class="card">🧠 Understand Emotions</div>
+      <div class="card">📊 Create Reports</div>
+      <div class="card">🎨 Generate Designs</div>
+      <div class="card">📅 Manage Your Day</div>
+      <div class="card">🔍 Intelligent Search</div>
+    </div>
+  </section>
+
+  <section id="chat" class="chatbot-section">
+    <h2>🤖 Talk to Organic AI</h2>
+    <div class="chat-box" id="chatBox">
+      <div class="msg bot">👋 Hello! I'm Organic AI. What's your name?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type something...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </section>
+
+  <section id="about" class="info-section">
+    <h2>About Organic AI</h2>
+    <p>Organic AI is designed to mimic human thinking and behavior. It learns from interactions and adapts to your needs using advanced machine learning.</p>
+  </section>
+
+  <section id="team" class="info-section">
+    <h2>Meet the Team</h2>
+    <ul>
+      <li>👨‍💻 Imran – Founder & AI Architect</li>
+      <li>🧠 Karthick – Data Scientist</li>
+      <li>🎨 Akilesh – Creative Designer</li>
+    </ul>
+  </section>
+
+  <section id="faq" class="info-section">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Q: Can I use this for real business automation?</strong></p>
+    <p>A: Yes! It's designed to handle human-level conversation.</p>
+    <p><strong>Q: Does Organic AI support voice?</strong></p>
+    <p>A: Not yet, but it's on our roadmap.</p>
+  </section>
+
+  <section id="contact" class="info-section">
+    <h2>Contact Us</h2>
+    <p>Email: support@organicaitech.com</p>
+    <p>Phone: +91 98765 43210</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Organic AI. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
