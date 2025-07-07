@@ -3,374 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organic AI - Human-Like Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <title>ImranDev | Full-Stack Developer</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="full.png">
     <style>
         :root {
             --primary: #6d28d9;
             --secondary: #10b981;
-            --dark: #0f172a;
-            --light: #f8fafc;
             --accent: #f59e0b;
-            --gradient: linear-gradient(135deg, #6d28d9 0%, #10b981 100%);
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --accent-glow: rgba(245, 158, 11, 0.2);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Space Grotesk', sans-serif;
             background-color: var(--dark);
             color: var(--light);
             line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(109, 40, 217, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 25%);
-            min-height: 100vh;
+            overflow-x: hidden;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
         }
-        
-        header {
-            text-align: center;
-            padding: 4rem 0;
+
+        .logo {
+            color: var(--light);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
-        
-        header::before {
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--gradient);
-            opacity: 0.1;
-            z-index: -1;
-            border-radius: 50%;
-            animation: pulse 15s infinite alternate;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.2); }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
-        
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 12% 5%;
+            background: radial-gradient(circle at 75% 30%, var(--accent-glow) 0%, transparent 30%);
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 5rem;
+        }
+
+        .hero-content h3 {
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(109, 40, 217, 0.3);
+            color: var(--accent);
         }
-        
-        .tagline {
-            font-size: 1.5rem;
+
+        .hero-content p {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            max-width: 680px;
         }
-        
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
         .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--gradient);
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
             color: white;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(109, 40, 217, 0.4);
+            position: relative;
+            overflow: hidden;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(109, 40, 217, 0.4);
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(109, 40, 217, 0.6);
         }
-        
-        section {
-            margin: 5rem 0;
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
             position: relative;
         }
-        
-        h2 {
-            font-family: 'Orbitron', sans-serif;
+
+        .profile-img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 50px var(--accent-glow);
+            animation: float 3s ease-in-out infinite;
+            filter: grayscale(0.2) contrast(1.1);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 8rem 5%;
+            background-color: var(--darker);
+        }
+
+        .skills h2 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--secondary);
         }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 3px;
-        }
-        
-        .features-grid {
+
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
-        .feature-card {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 2rem;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .feature-card:hover {
+
+        .skill-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(109, 40, 217, 0.2);
-            border-color: rgba(109, 40, 217, 0.5);
+            border-color: var(--accent);
         }
-        
-        .feature-card h3 {
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: var(--light);
         }
-        
-        .chat-interface {
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 600px;
-            margin: 3rem auto;
+
+        .skill-card p {
+            opacity: 0.8;
         }
-        
-        .chat-message {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .chat-input {
-            display: flex;
-            margin-top: 2rem;
-        }
-        
-        .chat-input input {
-            flex: 1;
-            padding: 1rem;
-            border-radius: 50px 0 0 50px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-        }
-        
-        .chat-input button {
-            padding: 1rem 2rem;
-            border-radius: 0 50px 50px 0;
-            border: none;
-            background: var(--primary);
-            color: white;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .chat-input button:hover {
-            background: var(--secondary);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .team-member {
-            text-align: center;
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(109, 40, 217, 0.2);
-        }
-        
-        .team-member h3 {
-            font-size: 1.5rem;
-            margin: 1rem 0 0.5rem;
-            color: var(--accent);
-        }
-        
-        .faq-item {
-            margin-bottom: 2rem;
-            background: rgba(15, 23, 42, 0.7);
-            border-radius: 15px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .faq-item h3 {
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-        
+
+        /* Footer */
         footer {
+            background: var(--darker);
+            padding: 3rem 5%;
             text-align: center;
-            padding: 3rem 0;
-            margin-top: 5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .contact-info {
+
+        .social-links {
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin: 2rem 0;
         }
-        
-        .contact-info a {
+
+        .social-links a {
             color: var(--light);
-            text-decoration: none;
+            font-size: 1.5rem;
             transition: all 0.3s ease;
         }
-        
-        .contact-info a:hover {
-            color: var(--secondary);
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
         }
-        
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 3rem;
+            }
+
+            .profile-img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+            .nav-links {
+                gap: 1.5rem;
             }
-            
-            .tagline {
-                font-size: 1.2rem;
+
+            .hero-content h3 {
+                font-size: 2rem;
             }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>ORGANIC AI</h1>
-            <p class="tagline">We build AI that talks, learns, and adapts like humans</p>
-            <button class="cta-button">Start Chatting</button>
-        </header>
-        
-        <section>
-            <h2>Features of Organic AI</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Chat Like a Human</h3>
-                    <p>Natural conversations with emotional intelligence and contextual understanding.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Understand Emotions</h3>
-                    <p>Detects and responds to user emotions for more meaningful interactions.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Create Reports</h3>
-                    <p>Automatically generates comprehensive reports from conversations.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Generate Designs</h3>
-                    <p>Transforms ideas into visual concepts through natural language.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Manage Your Day</h3>
-                    <p>Intelligent scheduling and task management through conversation.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Intelligent Search</h3>
-                    <p>Finds information conversationally with human-like understanding.</p>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">ImranDev</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3>Full-Stack Developer</h3>
+            <p>Building digital experiences that merge creativity with technology</p>
+            <p class="highlight">Specializing in modern web development and cyber systems</p>
+            <a href="#contact" class="cta-button">Let's Connect</a>
+        </div>
+        <div class="hero-image">
+            <img src="r.jpg" alt="Profile" class="profile-img">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Frontend Development</h3>
+                <p>React, Vue, HTML5, CSS3, JavaScript</p>
             </div>
-        </section>
-        
-        <section>
-            <h2>Talk to Organic AI</h2>
-            <div class="chat-interface">
-                <div class="chat-message">
-                    <p>Hello! I'm Organic AI. What's your name?</p>
-                </div>
-                <div class="chat-input">
-                    <input type="text" placeholder="Type something...">
-                    <button>Send</button>
-                </div>
+            <div class="skill-card">
+                <i class="fas fa-server"></i>
+                <h3>Backend Development</h3>
+                <p>Node.js, Python, MongoDB, PostgreSQL</p>
             </div>
-        </section>
-        
-        <section>
-            <h2>About Organic AI</h2>
-            <p>Organic AI is designed to mimic human thinking and behavior. It learns from interactions and adapts to your needs using advanced machine learning and neural networks that simulate human cognitive processes.</p>
-        </section>
-        
-        <section>
-            <h2>Meet the Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <h3>Imran</h3>
-                    <p>Founder & AI Architect</p>
-                </div>
-                <div class="team-member">
-                    <h3>Karthick</h3>
-                    <p>Data Scientist</p>
-                </div>
-                <div class="team-member">
-                    <h3>Akliekh</h3>
-                    <p>Creative Designer</p>
-                </div>
+            <div class="skill-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>Figma, Adobe XD, Prototyping, User Testing</p>
             </div>
-        </section>
-        
-        <section>
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>Can I use this for real business automation?</h3>
-                <p>Yes! Organic AI is specifically designed to handle human-level conversation for business applications including customer service, data analysis, and workflow automation.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Does Organic AI support voice?</h3>
-                <p>Voice interaction is currently in beta testing and will be available in our Q3 2025 update, featuring multi-language support and emotional tone recognition.</p>
-            </div>
-        </section>
-        
-        <footer>
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <a href="mailto:support@organicaitech.com">support@organicaitech.com</a>
-                <a href="tel:+919876543210">+91 98765 43210</a>
-            </div>
-            <p>© 2025 Organic AI. All rights reserved.</p>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2024 ImranDev. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-codepen"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
