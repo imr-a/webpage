@@ -1,0 +1,213 @@
+css
+/* styles.css - Enhanced with Increased Glowing Styles for All Episodes. This version intensifies the glow effects: brighter shadows, longer durations, multi-color pulses, and sequential delays for all 12 episodes. Applies to index.html and episode pages for a more vibrant, anime-like experience. */
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ff9933, #138808, #00008b);
+    background-size: 400% 400%;
+    animation: animeBackground 15s ease infinite;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+@keyframes animeBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hero Banner with Intensified Glow */
+.hero-banner {
+    background-color: rgba(255, 153, 51, 0.8);
+    padding: 40px;
+    text-align: center;
+    color: white;
+    animation: intensifiedHeroGlow 4s ease-in-out infinite alternate; /* Increased duration and intensity */
+    box-shadow: 0 0 40px rgba(255, 153, 51, 0.8); /* Brighter initial shadow */
+}
+
+@keyframes intensifiedHeroGlow {
+    0% { box-shadow: 0 0 20px #ff9933, 0 0 40px #ff9933; }
+    50% { box-shadow: 0 0 40px #138808, 0 0 60px #138808; }
+    100% { box-shadow: 0 0 20px #ff9933, 0 0 40px #ff9933; }
+}
+
+/* Navigation with Glowing Hover */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00; /* Increased glow on hover */
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    filter: drop-shadow(0 0 15px #ff9933); /* Intensified drop shadow */
+}
+
+/* Search Input with Glowing Focus */
+#search {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+}
+
+#search:focus {
+    box-shadow: 0 0 20px #ff9933, 0 0 40px #ff9933; /* Increased glow intensity */
+}
+
+/* Episode List with Increased Sequential Glowing for All 12 Episodes */
+.episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.episode {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: intensifiedGlowSequence 3s ease-in-out infinite; /* Increased duration for smoother pulsing */
+}
+
+.episode:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #ff9933, 0 0 80px #ff9933; /* Much brighter and larger glow on hover */
+}
+
+@keyframes intensifiedGlowSequence {
+    0% { box-shadow: 0 0 20px rgba(255, 153, 51, 0.7), 0 0 40px rgba(255, 153, 51, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(19, 136, 8, 0.9), 0 0 60px rgba(19, 136, 8, 0.7); }
+    100% { box-shadow: 0 0 20px rgba(255, 153, 51, 0.7), 0 0 40px rgba(255, 153, 51, 0.5); }
+}
+
+/* Sequential Delays for All 12 Episodes (Increased base delay for more noticeable sequencing) */
+.episode[data-index='0'] {
+    animation-delay: 0.0s;
+}
+.episode[data-index='1'] {
+    animation-delay: 0.3s;
+}
+.episode[data-index='2'] {
+    animation-delay: 0.6s;
+}
+.episode[data-index='3'] {
+    animation-delay: 0.9s;
+}
+.episode[data-index='4'] {
+    animation-delay: 1.2s;
+}
+.episode[data-index='5'] {
+    animation-delay: 1.5s;
+}
+.episode[data-index='6'] {
+    animation-delay: 1.8s;
+}
+.episode[data-index='7'] {
+    animation-delay: 2.1s;
+}
+.episode[data-index='8'] {
+    animation-delay: 2.4s;
+}
+.episode[data-index='9'] {
+    animation-delay: 2.7s;
+}
+.episode[data-index='10'] {
+    animation-delay: 3.0s;
+}
+.episode[data-index='11'] {
+    animation-delay: 3.3s;
+}
+/* Episode Page Specific Styles with Increased Glowing Image */
+.episode-page {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    animation: fadeIn 1s ease-in;
+}
+
+.episode-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px #ff9933, 0 0 50px #ff9933; /* Increased glow for images on episode pages */
+    transition: box-shadow 0.3s;
+}
+
+.episode-img:hover {
+    box-shadow: 0 0 50px #ffcc00, 0 0 80px #ffcc00; /* Even brighter on hover */
+}
+
+/* Back Link with Glowing Hover */
+.back-link {
+    display: block;
+    margin-bottom: 20px;
+    color: white;
+    text-decoration: none;
+    transition: text-shadow 0.3s;
+}
+
+.back-link:hover {
+    text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00; /* Increased glowing text shadow */
+}
+
+/* Footer with Subtle Glow */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 153, 51, 0.8);
+    color: white;
+    animation: footerGlow 3s ease-in-out infinite alternate; /* New footer glow animation */
+}
+
+@keyframes footerGlow {
+    from { box-shadow: 0 0 10px #ff9933; }
+    to { box-shadow: 0 0 20px #138808; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .episode {
+        width: 100%;
+    }
+}
+
